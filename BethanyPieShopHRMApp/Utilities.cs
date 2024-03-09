@@ -215,7 +215,7 @@ namespace BethanyPieShopHRMApp
             {
                 Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine($"Something went wrong while loading the file!\n\n");
-                // Display eroor message and location of error
+                // Display error message and location of error
                 Console.WriteLine(ex.Message);
                 
             }
