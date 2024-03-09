@@ -5,15 +5,16 @@ using System.ComponentModel.Design;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.IO
+using System.IO;
+
 
 namespace BethanyPieShopHRMApp
 {
     internal class Utilities
     {
         // Needed to check for file
-        public static string directoy = @"C:\Users\HP\Desktop\c# Pro";
-        public static string fileName = "employees.xt";
+        public static string directory = @"C:\Users\HP\Desktop\c# Pro";
+        public static string fileName = "employees.txt";
 
         internal static void RegisterEmployee(List<Employee> employees)
         {
@@ -86,7 +87,7 @@ namespace BethanyPieShopHRMApp
 
         internal static void CheckForExistingEmployeFile()
         {
-            string path = $"{directoy}{fileName}";
+            string path = $"{directory}{fileName}";
             bool existingFileFound = File.Exists(path);
 
             if (existingFileFound)
@@ -95,9 +96,9 @@ namespace BethanyPieShopHRMApp
             }
             else
             {
-                if (!Directory.Exists(directoy))
+                if (!Directory.Exists(directory))
                 {
-                    Directory.CreateDirectory(directoy);
+                    Directory.CreateDirectory(directory);
                     Console.ForegroundColor = ConsoleColor.DarkBlue;
                     Console.WriteLine("Directory is ready for saving files.");
                     Console.ResetColor();
@@ -107,7 +108,7 @@ namespace BethanyPieShopHRMApp
 
         internal static void SaveEmployees(List<Employee> employees)
         {
-            string path = $"{directoy}{fileName}";
+            string path = $"{directory}{fileName}";
             StringBuilder sb = new StringBuilder();
             
             //Using a loop to convert each employee into a string
@@ -119,7 +120,7 @@ namespace BethanyPieShopHRMApp
                 sb.Append($"firstName:{employee.FirstName};");
                 sb.Append($"lastName:{employee.LastName};");
                 sb.Append($"email:{employee.Email};");
-                sb.Append($"birthDay:{employee.BirthDay.ToShortDateString()};");
+                sb.Append($"birthDay:{employee.birthDay.ToShortDateString()};");
                 sb.Append($"hourlyRate:{employee.HourlyRate};");
                 sb.Append($"type:{type};");
                 sb.Append(Environment.NewLine);
