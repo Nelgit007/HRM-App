@@ -190,6 +190,16 @@ namespace BethanyPieShopHRMApp
                 }
             }
 
+            // Multiple catch   
+            catch (IndexOutOfRangeException iex)
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine($"Something went wrong passiing file! please check the date.\n\n");
+                // Display eroor message and location of error
+                Console.WriteLine(iex.Message);
+                //Console.ResetColor();
+            }
+
             catch (FileNotFoundException fnfex)
             {
                 Console.ForegroundColor = ConsoleColor.Red;
@@ -197,6 +207,21 @@ namespace BethanyPieShopHRMApp
                 // Display eroor message and location of error
                 Console.WriteLine(fnfex.Message);
                 Console.WriteLine(fnfex.StackTrace);
+                //Console.ResetColor();
+            }
+
+            // General catch exception
+            catch (Exception ex)
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine($"Something went wrong while loading the file!\n\n");
+                // Display eroor message and location of error
+                Console.WriteLine(ex.Message);
+                
+            }
+
+            finally
+            {
                 Console.ResetColor();
             }
 
