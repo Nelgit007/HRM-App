@@ -35,6 +35,7 @@ internal class Program
             Console.WriteLine("2: View all employees");
             Console.WriteLine("3: Save data");
             Console.WriteLine("4: Load data");
+            Console.WriteLine("5: Load specific employee");
             Console.WriteLine("9: Quit application");
             Console.Write("Your selection: ");
 
@@ -51,6 +52,9 @@ internal class Program
                     break;
                 case "3":
                     Utilities.SaveEmployees(employees);
+                    break;
+                case "5":
+                    Utilities.LoadEmployeeById(employees);
                     break;
                 case "9": break;
                 default:
