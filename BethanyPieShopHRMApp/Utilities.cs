@@ -135,7 +135,7 @@ namespace BethanyPieShopHRMApp
 
         }
 
-        // Seniior Dev's Work
+        // Senior Dev's Assist
         public static void LoadEmployees(List<Employee> employees)
         {
             string path = $"{directory}{fileName}";
